@@ -301,6 +301,15 @@ impl ResourceList {
     }
 }
 
+impl IntoIterator for ResourceList {
+    type Item = ResourceEntry;
+    type IntoIter = std::vec::IntoIter<ResourceEntry>;
+
+    fn into_iter(self) -> Self::IntoIter {
+        self.resources.into_iter()
+    }
+}
+
 #[derive(Debug)]
 pub enum ResourceMatcher {
     Kind(String),
