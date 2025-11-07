@@ -21,7 +21,7 @@ use std::cell::RefCell;
 use std::collections::HashMap;
 use std::slice::Iter;
 
-pub(crate) trait ProtobufWrapper<T: Message> {
+pub trait ProtobufWrapper<T: Message> {
     fn to_pb(self) -> T;
 }
 
